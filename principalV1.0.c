@@ -1,3 +1,16 @@
+
+/* Este programa tem como objetivo realizar reserva de passagens em um avião.
+Objetiva avaliar competências sobre vetores e matrizes em C.
+
+- O avião possui 300 lugares
+- Devem ser criados 2 vetores com o número de assentos do avião
+- Um dos vetores terá o número de cada assento, e o outro terá o nome de cada passageiro
+- Deve ser criada uma matriz com o total de assentos
+- A matriz inteira deve ser inicializada com valor 0
+
+*/
+
+
 #include <stdio.h>
 
 main () {
@@ -5,12 +18,9 @@ main () {
 	
 	int numAssentos[300] ; //Vetor com número de assentos
 	int controlNumAssentos = 0; //Variável de controle para popular o vetor de assentos 
-	
 	char nomes[300][15] ; //Matriz para os nomes de cada passageiro 
-	
 	int controleIndice = 0 ; //Variável de controle e acesso aos índices 
-	
-	int ocupados[50][6] = {0} ;	//Matriz para cada assento
+	int ocupados[50][6] = {0} ;	//Matriz 50x6 para localização de cada assento
 	char escolha ; //Variável de escolha para prosseguir com o programa ou não
 	int i,j ; //Variável de controle da matriz de assentos
 	
@@ -20,9 +30,10 @@ main () {
 	for (controlNumAssentos = 0 ; controlNumAssentos < 300 ; controlNumAssentos++ ) { 
 	
 					numAssentos[controlNumAssentos] = controlNumAssentos + 1 ;
-				
+										
+										}
 						
-					                                                                         }
+					                                    
 					//Fim loop de preenchimento
 
 
@@ -61,7 +72,7 @@ main () {
 	if (ocupados[fileira][posicao] == 1)  {
 	
 		 
-		 printf("\n\nAssento ocupado") ; 	
+		 printf("\n\nAssento já reservado, por gentileza escolha outro") ; 	
 		 
 		 
 	                                       }
@@ -69,7 +80,7 @@ main () {
 	
 	if (ocupados[fileira][posicao] == 0){
 	
-	printf("\n\nAssento cadastrado com sucesso") ; 	
+	printf("\n\nAssento reservado com sucesso") ; 	
 	controleIndice++ ;
 	ocupados[fileira][posicao] = 1 ;
 	                                    }
